@@ -9,6 +9,8 @@ Instead of using cloud APIs, this project uses **Ollama with local LLMs**, makin
 
 This is a **working prototype** and the foundation for a future full Copilot-style product.
 
+<img src="screenshot.png" alt="Vidya Rakshak Metaverse Screenshot" width="80%">
+
 ---
 
 ## 🚀 What This Project Does
@@ -111,8 +113,6 @@ ollama --version
 # 5. Pull an offline LLM model
 # --------------------------------------------------
 # Recommended lightweight models:
-ollama pull llama3
-# OR
 ollama pull gemma:1b
 
 
