@@ -38,7 +38,7 @@ function updateMain(imagePath, isClover) {
 }
 
 function downloadFile() {
-  const downloadLink = "https://drive.google.com/uc?export=download&id=16gcYUBGkGd6AMe_XCA3AjCbwQr8avnLq";
+  const downloadLink = "https://drive.google.com/file/d/1M2y_OcSnpowhouPG2_cbJ7vtUzIROkDF/view?usp=drive_link";
   window.location.href = downloadLink;
 }
 
