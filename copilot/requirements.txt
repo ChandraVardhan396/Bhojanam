@@ -1,0 +1,22 @@
+# UI framework (Qt for Python)
+PySide6>=6.6.0
+
+# OCR
+easyocr>=1.7.1
+
+# Image processing
+Pillow>=10.0.0
+opencv-python>=4.8.0
+
+# Numerical operations (required by EasyOCR & OpenCV)
+numpy>=1.24.0
+
+# Torch (CPU version – required by EasyOCR)
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Ollama Python client (offline LLM)
+ollama>=0.1.8
+
+# HTTP utilities (used internally / future-safe)
+requests>=2.31.0
