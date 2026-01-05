@@ -9,7 +9,10 @@ Instead of using cloud APIs, this project uses **Ollama with local LLMs**, makin
 
 This is a **working prototype** and the foundation for a future full Copilot-style product.
 
-<img src="screenshot.png" alt="Food Copilot Screenshot" width="80%">
+<p align="center">
+  <img src="screenshot.png" alt="Food Copilot Screenshot" width="80%">
+</p>
+
 
 ---
 
