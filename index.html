@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Bhojnam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- GSAP for Advanced Cinematic Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <main class="app-wrapper">
+    <div class="glass-container">
+      <!-- NAVBAR -->
+      <header class="navbar-pill">
+        <div class="logo">BHOJNAM</div>
+        <nav>
+          <a href="#download">Download</a>
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How It Works?</a>
+          <a href="#features">About</a>
+        </nav>
+      </header>
+
+      <!-- HERO SECTION -->
+      <section class="hero">
+        <div class="hero-content">
+          <!-- LEFT TEXT SECTION -->
+          <div class="hero-text">
+            <h1 id="heroTitle">
+              Scan Your Food<br>
+              Eat With<br>
+              Confidence
+            </h1>
+
+            <p>
+              Know exactly what you’re eating before taking the next bite.
+              Our smart food scanner analyzes ingredients instantly and tells
+              you whether a product is safe, healthy, or should be avoided.
+            </p>
+
+            <div class="cta-container anim-download">
+              <button class="explore-btn" onclick="downloadFile()">Download</button>
+              <img src="unsplash_lWBZ01XRRoI[1].png" class="btn-leaf-decorator" alt="Decorative Leaf">
+            </div>
+          </div>
+
+          <!-- RIGHT VISUAL SECTION -->
+          <div class="hero-visual animate-on-scroll">
+            <div class="main-portrait-circle anim-main">
+              <img src="Mask_group[1].png" alt="Smiling Woman" class="main-img" id="mainImg">
+            </div>
+
+            <div class="salad-plate plate-1 anim-plate" onclick="updateMain('unsplash_prmIcua92EA[1].png', false)">
+              <img src="unsplash_prmIcua92EA[1].png" alt="Salad Plate 1">
+            </div>
+            <div class="salad-plate plate-2 anim-plate" onclick="updateMain('unsplash_SFL6xzPTlx8[1].png', false)">
+              <img src="unsplash_SFL6xzPTlx8[1].png" alt="Salad Plate 2">
+            </div>
+
+            <img src="unsplash_jvMcNnh20Ow.png" class="clover clover-1 anim-deco" alt="Clover"
+              onclick="updateMain('unsplash_jvMcNnh20Ow.png', true)">
+            <img src="unsplash_jvMcNnh20Ow.png" class="clover clover-2 anim-deco" alt="Clover"
+              onclick="updateMain('unsplash_jvMcNnh20Ow.png', true)">
+            <img src="unsplash_jvMcNnh20Ow.png" class="clover clover-3 anim-deco" alt="Clover"
+              onclick="updateMain('unsplash_jvMcNnh20Ow.png', true)">
+
+            <img src="unsplash_Zz0WhjIFZ9g[1].png" class="leaf leaf-float-left anim-deco" alt="Leaf">
+            <img src="unsplash_lWBZ01XRRoI[1].png" class="leaf leaf-float-right anim-deco" alt="Leaf">
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES SECTION -->
+      <section class="features-section" id="features">
+        <div class="features-header animate-on-scroll">
+          <h2 class="section-title">Intelligent AI Analysis</h2>
+          <p class="section-subtitle">Empowering your food choices with reasoning-driven insights and human-centered
+            technology.</p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1: Scan & Understand -->
+          <div class="feature-card anim-feature">
+            <div class="feature-icon-box">
+              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 4H7C4.79086 4 3 5.79086 3 8V17C3 19.2091 4.79086 21 7 21H17C19.2091 21 21 19.2091 21 17V14"
+                  stroke="#1a4d1a" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M14 4H17C19.2091 4 21 5.79086 21 8V10" stroke="#1a4d1a" stroke-width="1.8"
+                  stroke-linecap="round" />
+                <path d="M3 12H21" stroke="#e6b800" stroke-width="2" stroke-dasharray="2 3" />
+                <circle cx="12" cy="12" r="3.5" stroke="#1a4d1a" stroke-width="1.8" />
+              </svg>
+            </div>
+            <h3>Scan & Understand</h3>
+            <p>Upload a photo or paste text—our AI interprets ingredients in plain, human language, explaining exactly
+              what's inside.</p>
+          </div>
+
+          <!-- Feature 2: Personal Inference -->
+          <div class="feature-card anim-feature">
+            <div class="feature-icon-box">
+              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.5 14.5L12 17L14.5 14.5M12 7V17" stroke="#1a4d1a" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z"
+                  stroke="#1a4d1a" stroke-width="1.8" />
+                <path d="M8 9C8 9 9 10 12 10C15 10 16 9 16 9" stroke="#e6b800" stroke-width="1.8"
+                  stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3>Personal Inference</h3>
+            <p>The AI infers what matters to you based on product type and follow-up questions, without annoying forms.
+            </p>
+          </div>
+
+          <!-- Feature 3: Reasoning Health Insights -->
+          <div class="feature-card anim-feature">
+            <div class="feature-icon-box">
+              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                  stroke="#1a4d1a" stroke-width="1.8" />
+                <path d="M7 12H10L11 15L13 9L14 12H17" stroke="#e6b800" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3>Reasoning Health Insights</h3>
+            <p>Understand the "why" behind ingredients, trade-offs, and contextual risks, not just a list of names.</p>
+          </div>
+
+          <!-- Feature 4: Honesty & Uncertainty -->
+          <div class="feature-card anim-feature">
+            <div class="feature-icon-box">
+              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 6H21M12 6V21M7 21H17" stroke="#1a4d1a" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M7 12L3 14V16L7 14V12Z" stroke="#e6b800" stroke-width="1.8" />
+                <path d="M17 10L21 8V6L17 8V10Z" stroke="#e6b800" stroke-width="1.8" />
+              </svg>
+            </div>
+            <h3>Honesty & Uncertainty</h3>
+            <p>When science is debated, we tell you. Build trust with clear confidence levels and transparent reasoning.
+            </p>
+          </div>
+
+          <!-- Feature 5: Decision-Time Guidance -->
+          <div class="feature-card anim-feature">
+            <div class="feature-icon-box">
+              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 13L9 17L19 7" stroke="#1a4d1a" stroke-width="2.2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <circle cx="12" cy="12" r="10" stroke="#e6b800" stroke-width="1.5" stroke-dasharray="3 3" />
+              </svg>
+            </div>
+            <h3>Decision-Time Guidance</h3>
+            <p>Get a simple verdict—Generally okay, Consume occasionally, or Not ideal—with a concise 1-line reason.</p>
+          </div>
+
+          <!-- Feature 6: Conversational Co-Pilot -->
+          <div class="feature-card anim-feature">
+            <div class="feature-icon-box">
+              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C10.8954 2 10 2.89543 10 4V5H14V4C14 2.89543 13.1046 2 12 2Z" fill="#1a4d1a" />
+                <rect x="5" y="5" width="14" height="12" rx="3" stroke="#1a4d1a" stroke-width="1.8" />
+                <path d="M9 11H9.01M15 11H15.01" stroke="#1a4d1a" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M8 17V19C8 20.1046 8.89543 21 10 21H14C15.1046 21 16 20.1046 16 19V17" stroke="#1a4d1a"
+                  stroke-width="1.8" />
+                <path d="M10 14H14" stroke="#e6b800" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3>Conversational Co-Pilot</h3>
+            <p>Ask anything: "Is this safe for daily use?" or "Better alternatives?". Our AI adapts and acts as your
+              personal guide.</p>
+          </div>
+        </div>
+      </section>
+
+      </section>
+
+      <!-- HOW TO USE SECTION -->
+      <section class="how-to-use-section" id="how-it-works">
+        <div class="how-header animate-on-scroll">
+          <h2 class="section-title">How to Use?</h2>
+          <p class="section-subtitle">Start your journey to healthier eating in 5 simple steps.</p>
+        </div>
+
+        <div class="how-steps">
+          <!-- Step 1 -->
+          <div class="how-step anim-how">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <h3>Press the Download Button</h3>
+              <p>Get started by clicking the download button to install the Bhojnam.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="how-step anim-how">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <h3>Open & Check Purity</h3>
+              <p>Launch the app and use it to instantly check the purity and safety of what you are eating.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="how-step anim-how">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <h3>Scan Option</h3>
+              <p>Use the built-in scan option to analyze ingredient lists directly on any website you visit.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="how-step anim-how">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <h3>Image Upload</h3>
+              <p>Simply upload a photo of any food label, and our AI will immediately scan and interpret it for you.</p>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="how-step anim-how">
+            <div class="step-num">05</div>
+            <div class="step-content">
+              <h3>Live Camera Reply</h3>
+              <p>Use your camera for a live "reply" from the AI, getting real-time insights as you point at food
+                products.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW DOWNLOAD SECTION (Matching Reference Image) -->
+      <section class="download-section" id="download">
+        <div class="download-container animate-on-scroll">
+
+          <!-- LEFT: VISUAL GROUP (Stacked Plates) -->
+          <div class="download-visual">
+            <div class="stacked-plate-group">
+              <div class="large-plate-wrapper anim-dl-visual">
+                <img src="unsplash_prmIcua92EA[1].png" alt="Featured Salad">
+              </div>
+              <div class="small-plate-wrapper anim-dl-visual">
+                <img src="unsplash_SFL6xzPTlx8[1].png" alt="Secondary Salad">
+              </div>
+              <img src="unsplash_jvMcNnh20Ow.png" class="dl-clover anim-dl-deco" alt="Clover">
+              <img src="unsplash_Zz0WhjIFZ9g[1].png" class="dl-leaf anim-dl-deco" alt="Leaf">
+            </div>
+          </div>
+
+          <!-- RIGHT: CONTENT GROUP (Heading, Button, Box) -->
+          <div class="download-content">
+            <h2 class="dl-heading anim-dl-text">
+              <span class="text-white">Healthy</span> <span class="text-green">Eating</span><br>
+              <span class="text-white">is</span> <span class="text-yellow">an Important</span><br>
+              <span class="text-white">of</span> <span class="text-green">lifestyle</span>
+            </h2>
+
+            <div class="dl-button-wrapper anim-dl-button">
+              <button class="dl-pill-btn" onclick="downloadFile()">Download</button>
+            </div>
+
+            <div class="dl-info-box anim-dl-box">
+              <p>
+                Make healthier food choices without leaving your browser.
+                Scan ingredients instantly while shopping online or reading food labels.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

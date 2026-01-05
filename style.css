@@ -1,0 +1,857 @@
+/* Senior UI/UX Engineer - Pixel-Perfect Refinement */
+:root {
+  /* 3. LAYERED BACKGROUND SYSTEM */
+  --page-bg: #76a376;
+  /* Layer A: Page Background */
+  --container-bg: radial-gradient(circle at 50% 40%, #c4e4c4 0%, #a4d1a4 50%, #89b889 100%);
+  /* Layer B: Container */
+
+  --text-dark: #164216;
+  --text-title: rgba(255, 255, 255, 0.72);
+
+  --accent-button: #074a07;
+  --white: #ffffff;
+
+  --glass-nav: rgba(255, 255, 255, 0.3);
+}
+
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--page-bg);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.app-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-container {
+  width: 100%;
+  height: 100%;
+  background: var(--container-bg);
+  border-radius: 60px;
+  position: relative;
+  /* 3. LAYER C: SUBTLE INNER DEPTH */
+  box-shadow:
+    0 50px 100px rgba(0, 0, 0, 0.12),
+    inset 0 0 100px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  /* 6. CTA VISIBILITY */
+}
+
+/* NAVBAR PILL */
+.navbar-pill {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  right: 40px;
+  height: 70px;
+  background: var(--glass-nav);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  justify-content: space-between;
+  z-index: 100;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.logo {
+  font-family: 'Baloo 2', cursive;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -1.5px;
+}
+
+.navbar-pill nav a {
+  margin-left: 40px;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 17px;
+  opacity: 0.85;
+}
+
+/* 1. HERO SECTION - CLEARANCE & SPACING */
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 120px 80px 40px;
+  /* 1. INCREASED TOP PADDING */
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  width: 100%;
+  gap: 50px;
+}
+
+/* 2. HEADING TYPOGRAPHY REFINEMENT */
+.hero-text {
+  z-index: 10;
+}
+
+.hero-text h1 {
+  font-family: 'Baloo 2', cursive;
+  font-size: clamp(3.5rem, 5.5vw, 5.8rem);
+  /* 2. SLIGHTLY REDUCED SIZE */
+  line-height: 0.88;
+  /* 2. TIGHTENED LINE HEIGHT */
+  color: var(--text-title);
+  margin-bottom: 2rem;
+  font-weight: 800;
+  letter-spacing: -2.5px;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--text-dark);
+  max-width: 480px;
+  margin-bottom: 4rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* CTA BUTTON POSITIONING */
+.cta-container {
+  position: relative;
+  display: inline-block;
+}
+
+.explore-btn {
+  padding: 20px 70px;
+  font-size: 3rem;
+  font-family: 'Baloo 2', cursive;
+  font-weight: 800;
+  background: var(--accent-button);
+  color: var(--white);
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  line-height: 1;
+}
+
+.btn-leaf-decorator {
+  position: absolute;
+  bottom: -35px;
+  right: -55px;
+  width: 110px;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* 4. HERO IMAGE POSITIONING */
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  padding-right: 40px;
+  /* 4. EQUAL RIGHT MARGIN */
+}
+
+.main-portrait-circle {
+  width: 480px;
+  height: 480px;
+  background: var(--white);
+  border-radius: 50%;
+  border: 25px solid var(--white);
+  /* 4. INCREASED BORDER */
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 5;
+  transform: translateX(-20px);
+  /* 4. MOVE SLIGHTLY LEFT */
+}
+
+.main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1) translateX(10%);
+}
+
+/* 5. FOOD IMAGE TRIANGULAR COMPOSITION */
+.salad-plate {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--white);
+  padding: 10px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+}
+
+.salad-plate img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.plate-1 {
+  width: 250px;
+  height: 250px;
+  bottom: 20px;
+  right: 380px;
+  /* 5. BALANCED LAYOUT */
+}
+
+.plate-2 {
+  width: 210px;
+  height: 210px;
+  bottom: -40px;
+  right: 210px;
+  /* 5. BALANCED LAYOUT */
+}
+
+/* 7. AMBIENT DECORATIVE ELEMENTS */
+.clover {
+  position: absolute;
+  z-index: 15;
+  opacity: 0.45;
+  /* 7. REDUCED OPACITY */
+  filter: blur(0.5px);
+  pointer-events: none;
+}
+
+.clover-1 {
+  top: 15%;
+  right: 460px;
+  width: 70px;
+}
+
+.clover-2 {
+  top: 45%;
+  right: 480px;
+  width: 45px;
+}
+
+.clover-3 {
+  bottom: 8%;
+  right: 30px;
+  width: 65px;
+}
+
+.leaf {
+  position: absolute;
+  opacity: 0.4;
+  /* 7. REDUCED OPACITY */
+  filter: blur(1px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.leaf-float-left {
+  width: 140px;
+  bottom: 15%;
+  left: 550px;
+  transform: rotate(-30deg) scaleX(-1);
+}
+
+.leaf-float-right {
+  width: 160px;
+  top: 15%;
+  right: -60px;
+  transform: rotate(45deg);
+}
+
+/* SMOOTH AMBIENT ANIMATION */
+@keyframes ambientY {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.main-portrait-circle {
+  animation: ambientY 12s ease-in-out infinite;
+}
+
+.plate-1 {
+  animation: ambientY 10s ease-in-out infinite 0.5s;
+}
+
+.plate-2 {
+  animation: ambientY 11s ease-in-out infinite 1s;
+}
+
+/* 8. RESPONSIVE ADAPTATIONS */
+@media (max-width: 1400px) {
+  .hero {
+    padding: 120px 40px 40px;
+  }
+
+  .plate-1 {
+    right: 320px;
+  }
+
+  .plate-2 {
+    right: 160px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 60px;
+  }
+
+  .hero-text h1 {
+    font-size: 3.8rem;
+  }
+
+  .hero-visual {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .main-portrait-circle {
+    transform: translateX(0);
+  }
+
+  .plate-1 {
+    right: 55%;
+  }
+
+  .plate-2 {
+    right: 25%;
+  }
+}
+
+
+/* GSAP CINEMATIC INITIAL STATES (Before Animation) */
+
+.anim-main,
+.anim-plate,
+.anim-download,
+.anim-deco {
+  opacity: 0;
+  visibility: hidden;
+  /* Prevent interaction before reveal */
+}
+
+/* 1. Main Image: Slightly right-aligned, scaled down */
+.anim-main {
+  /* x: 60px, scale: 0.85 will be handled by GSAP but set here for safety */
+  transform: translateX(60px) scale(0.85);
+}
+
+/* 2. Food Plates: Scaled down */
+.anim-plate {
+  transform: scale(0.7);
+}
+
+/* 3. Download Button: Shifted down 80px */
+.anim-download {
+  transform: translateY(80px);
+  /* Center handled by wrapper flex */
+}
+
+/* 4. Ambient Decorators */
+.anim-deco {
+  transform: scale(0.7);
+}
+
+/* --- DOWNLOAD SECTION STYLING (Matching Reference) --- */
+.download-section {
+  min-height: 100vh;
+  padding: 100px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.download-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 100px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* LEFT: STACKED PLATES */
+.download-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stacked-plate-group {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.large-plate-wrapper {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: var(--white);
+  padding: 10px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12);
+}
+
+.large-plate-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.small-plate-wrapper {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--white);
+  padding: 6px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+
+.small-plate-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dl-clover {
+  position: absolute;
+  top: -40px;
+  right: 50px;
+  width: 80px;
+  opacity: 0.7;
+  filter: blur(0.5px);
+}
+
+.dl-leaf {
+  position: absolute;
+  bottom: 100px;
+  left: -60px;
+  width: 120px;
+  opacity: 0.5;
+  filter: blur(1px);
+  transform: rotate(-45deg);
+}
+
+/* RIGHT: CONTENT & COLORS */
+.download-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.dl-heading {
+  font-family: 'Baloo 2', cursive;
+  font-size: 5rem;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.text-white {
+  color: #f0f5f0;
+}
+
+/* Soft white from img */
+.text-green {
+  color: #1a4d1a;
+}
+
+/* Branded dark green */
+.text-yellow {
+  color: #e6b800;
+}
+
+/* Branded gold/yellow */
+
+.dl-button-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.dl-pill-btn {
+  padding: 12px 50px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #1a4d1a;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 100px;
+  font-family: 'Baloo 2', cursive;
+  font-weight: 800;
+  font-size: 2.2rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.dl-pill-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* GLASS INFO BOX */
+.dl-info-box {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  padding: 35px;
+  max-width: 500px;
+  color: #1a4d1a;
+  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+/* Update Glass Container for Scroll */
+.glass-container {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for clean look */
+.glass-container::-webkit-scrollbar {
+  display: none;
+}
+
+.glass-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* GSAP REVEAL INITIAL STATES */
+.anim-dl-visual,
+.anim-dl-text,
+.anim-dl-button,
+.anim-dl-box,
+.anim-dl-deco {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* --- DOWNLOAD COMPONENT STYLING (Glassmorphism Refined) --- */
+.hero-download-wrapper {
+  position: relative;
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 30;
+}
+
+.download-pill-btn {
+  padding: 12px 45px;
+  /* Glassmorphism background matching the UI capture */
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #1a4d1a;
+  /* Dark green from image */
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 100px;
+  font-family: 'Baloo 2', cursive;
+  font-weight: 800;
+  font-size: 1.6rem;
+  /* Slightly larger as per image */
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.download-pill-btn:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 12px 40px rgba(31, 38, 135, 0.15);
+}
+
+/* Clover next to Download Button */
+.download-clover-decorator {
+  width: 45px;
+  margin-right: -15px;
+  /* Slight overlap */
+  z-index: 31;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  animation: miniFloat 3s ease-in-out infinite;
+}
+
+@keyframes miniFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(10deg);
+  }
+}
+
+/* One-time entrance for Navbar on load */
+.navbar-pill {
+  animation: slideDownNav 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes slideDownNav {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* --- FEATURES SECTION STYLING --- */
+.features-section {
+  padding: 120px 80px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.features-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 4rem;
+  color: var(--text-dark);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 40px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon-box {
+  width: 80px;
+  height: 80px;
+  background: var(--white);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.feature-card h3 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.8rem;
+  color: #1a4d1a;
+  margin-top: 10px;
+}
+
+.feature-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #1a4d1a;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+/* Features Animation States */
+.anim-feature {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(50px) scale(0.9);
+}
+
+@media (max-width: 1200px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .features-section {
+    padding: 80px 30px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+/* --- HOW TO USE SECTION STYLING --- */
+.how-to-use-section {
+  padding: 120px 80px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.how-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.how-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.how-step {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 40px 60px;
+  border-radius: 40px;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+}
+
+.how-step:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateX(15px);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.step-num {
+  font-family: 'Baloo 2', cursive;
+  font-size: 5rem;
+  font-weight: 800;
+  color: #e6b800;
+  line-height: 1;
+  opacity: 0.8;
+  min-width: 100px;
+}
+
+.step-content h3 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.2rem;
+  color: #1a4d1a;
+  margin-bottom: 10px;
+}
+
+.step-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #1a4d1a;
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+/* Animation States */
+.anim-how {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50px);
+}
+
+@media (max-width: 768px) {
+  .how-step {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 40px;
+  }
+
+  .how-step:hover {
+    transform: translateY(-10px);
+  }
+
+  .step-num {
+    font-size: 4rem;
+    min-width: auto;
+  }
+}
